@@ -42,7 +42,7 @@ jobs:
 
     - name: Add known_hosts
       run: |
-        ssh-keygen -t ed25519 15.164.226.194 >> ~/.ssh/known_hosts
+        ssh-keyscan 15.164.226.194 >> ~/.ssh/known_hosts
 
     - name: Deploy to Server
       run: scp build/libs/*.jar ubuntu@15.164.226.194:~/source_folder/app/
